@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 得到上一个页面的参数
+        console.log(location.search);// ?uname=xxx
+        // 把第一个?去掉 从索引号为1的位置截取
+        var str=location.search.substr(1);
+        console.log(str);// uname=xxx
+        // 把字符串变成数组，中间的分割符号为=
+        var arr=str.split('=');
+        console.log(arr);
+        // arr[1]就是我们要的参数
+        console.log(arr[1]);
+        var div=document.querySelector('div');
+        div.innerHTML=arr[1]+'欢迎你';
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var money = 100;
+        // var choice = prompt('请输入你要的操作\n' + '1.存钱\n' + '2.取钱\n' + '3.显示余额\n' + '4.退出');
+        while (choice != 4) {
+            var choice = prompt('请输入你要的操作\n' + '1.存钱\n' + '2.取钱\n' + '3.显示余额\n' + '4.退出');
+            if (choice == 1) {
+                var cq = prompt('请您输入存的钱数');
+                money += Number(cq);
+                alert('你现在的钱数是:' + money);
+            } else if (choice == 2) {
+                var qq = prompt('请您输入存的钱数');
+                money -= Number(qq);
+                alert('你现在的钱数是:' + money);
+            } else if (choice == 3) {
+                alert('你现在的钱数是:' + money);
+            } else if (choice == 4) {
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

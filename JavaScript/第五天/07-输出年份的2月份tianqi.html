@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function backDay() {
+            var year = prompt('请输入xxx年');
+            if (isRunYear(year)) {
+                alert('当前年份2月29天');
+            } else {
+                alert('当前年份2月28天');
+            }
+        }
+        function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        backDay();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

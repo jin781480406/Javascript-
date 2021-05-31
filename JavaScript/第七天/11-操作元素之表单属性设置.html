@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <input type="text" value="请输入内容">
+    <script>
+        var btn=document.querySelector('button');
+        var input=document.querySelector('input');
+        btn.onclick=function(){
+            // input.innerHTML='被点击了';  这只针对普通盒子 例如div
+            // 表单里的值是通过value改变
+            input.value='被点击了';
+            // 如果想要某个按钮被点击后，就此禁用 disabled
+            // btn.disabled=true;
+            this.disabled=true;
+            // this指向的是事件函数的调用者 这是指的是btn
+        }
+    </script>
+</body>
+</html>

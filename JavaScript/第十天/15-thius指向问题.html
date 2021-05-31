@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        // 1.全局作用域或者普通函数中的this指向的是window
+        console.log(this);
+        function fn(){
+            console.log(this);
+        }
+        window.fn();
+        window.setTimeout(function(){
+            console.log(this);
+        },1000)
+
+        // 2.方法中this 谁调用指向谁
+        var obj={
+            sayHi:function(){
+                console.log(this);
+            }
+        }
+        obj.sayHi();
+        var btn=document.querySelector('button');
+        btn.addEventListener('click',function(){
+            console.log(this);
+        })
+
+        // 3.构造函数中的this
+        // 指向的是对象
+        function Fun(){
+            console.log(this);
+        }
+        var fn=new Fun();
+    </script>
+</body>
+</html>

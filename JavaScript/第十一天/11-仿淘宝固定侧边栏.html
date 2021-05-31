@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 页面被卷到头部是window.pageYoffset属性得到
+        // 元素的内容被卷到顶部是scrollTop
+        // 获取元素
+        var sliderbar=document.querySelector('.slider-bar');
+        var banner=document.querySelector('.banner');
+        var goBack=document.querySelector('.goBack');
+        var header=document.querySelector('.header');
+        var main=document.querySelector('.main');
+        // bannerTop就是卷去头部的高度
+        var bannerTop=banner.offsetTop;
+        // sliderbarTop就是侧边栏的距离banner的高度
+        var sliderbarTop=sliderbar.offsetTop-banner.offsetTop;
+        // mainTop就是卷去banner的高度
+        var mainTop=main.offsetTop;
+        // console.log(bannerTop);
+        // 页面滚动事件
+        document.addEventListener('scroll',function(){
+            // 当卷过头部时
+            if(window.pageYOffset>=bannerTop){
+                sliderbar.style.position='fixed';
+                sliderbar.style.top=sliderbarTop+'px';
+            }else {
+                sliderbar.style.position='absolute';
+                sliderbar.style.top='300px';
+            }
+            // 当卷过banner时
+            if(window.pageYOffset>=mainTop){
+                goBack.style.display='block';
+            }else {
+                goBack.style.display='none';
+            }
+        })
+    </script>
+</body>
+
+</html>

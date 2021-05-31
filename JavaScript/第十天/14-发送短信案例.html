@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    手机号码:
+    <input type="number"><button>发送</button>
+    <script>
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        var time = 5;
+        btn.addEventListener('click', function () {
+            // btn.setAttribute('disabled', true);
+            btn.disabled=true;
+            input.value = '';
+            var timer=setInterval(function () {
+                if (time === 0) {
+                    // 恢复按钮
+                    btn.disabled = false;
+                    // 按钮文字改变
+                    btn.innerHTML='发送'
+                    // 清除定时器
+                    clearInterval(timer);
+                    // time重新回到5
+                    time=5;
+                } else {
+                    // 按钮文字改变
+                    btn.innerHTML = '发送' + time + '秒后可再次发送';
+                    time--;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

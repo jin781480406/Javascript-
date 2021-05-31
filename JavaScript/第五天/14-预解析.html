@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.问
+        var num1=10;
+        console.log(num1);
+        // 2.问
+        console.log(num2);// undefined 坑1
+        var num2=20;
+        // 相当于执行下面代码
+        /* var num2;
+        console.log(num2);
+        num2=20; */
+        // 3.问
+        fn();
+        function fn(){
+            console.log(11);
+        }
+        // 4.问
+        fun();// 报错
+        var fun=function(){
+            console.log(22);
+        }
+        // 函数表达式，调用函数必须写在函数表达式的下面
+        // 相当于执行下面代码
+        /* var fun;
+        fun();
+        fun==function(){
+            console.log(22);
+        } */
+
+
+
+        // js引擎运行js分为两步：预解析和代码运行
+        // 预解析js引擎会把js里面所有的var 和 function提升到作用域最前面
+        // 然后在按照书写顺序从上而下执行
+        // 预解析分为变量预解析（变量提升）和函数预解析（函数提升）
+        // 变量提升就是把变量声明提升到最前面，但是不赋值
+        // 函数提升就是把函数声明提升到最前面，但是不调用函数
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

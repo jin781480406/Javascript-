@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            /* top: 0; */
+            /* left: 0; */
+            transform: translate(-50%,-50%);
+            cursor: none;
+        }
+    </style>
+</head>
+<body>
+    <p>qwewqeqewqwqewq</p>
+    <div>asdsadsadasdd</div>
+    <img src="images/angel.gif" alt="">
+    <script>
+        var img=document.querySelector('img');
+        document.addEventListener('mousemove',function(e){
+            // console.log(1);
+            // 每次鼠标移动，获取x和y值，赋值给img的相对定位
+            var x=e.pageX;
+            var y=e.pageY;
+            // 千万不要忘记加px
+            img.style.top=y+'px';
+            img.style.left=x+'px';
+        })
+    </script>
+</body>
+</html>

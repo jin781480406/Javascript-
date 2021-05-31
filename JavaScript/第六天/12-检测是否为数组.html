@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverse(arr) {
+            if (arr instanceof Array) {
+                var newArr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    newArr[newArr.length] = arr[arr.length - i - 1];
+                }
+                return newArr;
+            }else {
+                return 'error';
+            }
+        }
+        console.log(reverse([1,22,33,4]));
+        console.log(reverse(1,34,2));
+        // 1.利用instanceof来检测
+        var arr=new Array();
+        var obj=new Object()
+        console.log(arr instanceof Array);
+        console.log(obj instanceof Array);
+        // 2.利用isArray()  H5新特性
+        console.log(Array.isArray(arr));
+        console.log(Array.isArray(obj));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

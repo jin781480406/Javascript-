@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        var btn=document.querySelector('button');
+        btn.addEventListener('click',function(){
+            // assign是跳转到另一个页面，与location.href相同 能后退
+            // location.assign('http://www.baidu.com');
+            // replace也是跳转到另一个页面 但不能后退
+            // location.replace('http://www.baidu.com');
+            // reload是刷新 与f5相同 
+            // 当括号里的参数是true时 是强制刷新
+            location.reload();
+        })
+    </script>
+</body>
+</html>

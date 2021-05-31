@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一个
+        console.log(1);
+
+        window.setTimeout(function(){
+            console.log(3);
+        },1000);
+
+        console.log(2);
+
+        // 执行的结果是1 2 3
+        // js异步操作
+
+
+        // 第二个
+        console.log(1);
+
+        window.setTimeout(function(){
+            console.log(3);
+        },0);
+
+        console.log(2);
+        // 执行的结果是1 2 3
+
+        // js执行机制是先把任务分成同步任务和异步任务，先把同步任务里的函数执行完毕
+        // 异步任务放在任务队列中
+        // 等同步任务执行完毕后，执行异步任务
+        
+        // 事件循环
+        // 不断去访问任务队列，去查看有无异步任务
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        var num = getRandomInt(1, 10);
+
+        while (true) {
+            var guess = prompt('请输入1~10的一个数');
+            if (guess > num) {
+                alert('数字大了');
+            } else if (guess < num) {
+                alert('数字小了');
+            }else if(guess==num){
+                alert('猜对了');
+                break;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

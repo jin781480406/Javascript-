@@ -1,0 +1,349 @@
+/* 首页main的制作 */
+
+.main {
+    width: 980px;
+    height: 455px;
+    margin-left: 220px;
+    margin-top: 10px;
+}
+
+.focus {
+    position: relative;
+    float: left;
+    width: 721px;
+    height: 455px;
+    overflow: hidden;
+
+}
+.focus ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+}
+.focus ul li {
+    float: left;
+}
+.arrow-l,
+.arrow-r {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 24px;
+    height: 40px;
+    background: rgba(0, 0, 0, .3);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.circle {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+}
+.circle li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    /*background-color: #fff;*/
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin: 0 3px;
+    border-radius: 50%;
+    /*鼠标经过显示小手*/
+    cursor: pointer;
+}
+
+.current {
+    background-color: #fff;
+}
+.newsflash {
+    float: right;
+    width: 251px;
+    height: 455px;
+}
+
+.newsflash .news {
+    height: 165px;
+    /* background-color: skyblue; */
+    border: 1px solid #e4e4e4;
+}
+
+.news-hd {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 15px;
+    border-bottom: 1px dotted #e4e4e4;
+}
+
+.news-hd h4 {
+    float: left;
+    font-size: 14px;
+}
+
+.news-hd .more {
+    float: right;
+}
+
+.news-hd .more::after {
+    font-family: 'iconfont';
+    content: '\e666';
+    margin-left: 5px;
+}
+
+.news-bd {
+    padding: 5px 15px 0;
+}
+
+.news-bd ul li {
+    height: 24px;
+    line-height: 24px;
+    /* 这个单词的意思是如果文字显示不开，也必须强制到一行内显示 */
+    white-space: nowrap;
+    /* 溢出的部分隐藏起来 */
+    overflow: hidden;
+    /* 文字溢出的时候用省略号显示 */
+    text-overflow: ellipsis;
+}
+
+.lifeservice {
+    overflow: hidden;
+    height: 209px;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+
+.lifeservice ul {
+    width: 252px;
+}
+
+.lifeservice ul li {
+    position: relative;
+    float: left;
+    width: 63px;
+    height: 71px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+
+.lifeservice ul li a i {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: aqua;
+    margin-top: 12px;
+}
+
+.lifeservice ul li a .pic1 {
+    background: url(../images/icons.png) no-repeat -15px -15px;
+}
+
+.lifeservice ul li a .pic2 {
+    background: url(../images/icons.png) no-repeat -79px -16px;
+}
+
+.lifeservice ul li a .pic3 {
+    background: url(../images/icons.png) no-repeat -140px -15px;
+}
+
+.lifeservice ul li a .pic4 {
+    background: url(../images/icons.png) no-repeat -205px -15px;
+}
+
+.lifeservice ul li a .pic5 {
+    background: url(../images/icons.png) no-repeat -16px -87px;
+}
+
+.lifeservice ul li a .pic6 {
+    background: url(../images/icons.png) no-repeat -78px -87px;
+}
+
+.lifeservice ul li a .pic7 {
+    background: url(../images/icons.png) no-repeat -140px -87px;
+}
+
+.lifeservice ul li a .pic8 {
+    background: url(../images/icons.png) no-repeat -205px -87px;
+}
+
+.lifeservice ul li a .pic9 {
+    background: url(../images/icons.png) no-repeat -15px -158px;
+}
+
+.lifeservice ul li a .pic10 {
+    background: url(../images/icons.png) no-repeat -77px -158px;
+}
+
+.lifeservice ul li a .pic11 {
+    background: url(../images/icons.png) no-repeat -140px -158px;
+}
+
+.lifeservice ul li a .pic12 {
+    background: url(../images/icons.png) no-repeat -204px -15px;
+}
+.lifeservice ul li .jian  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #589d5a;
+    
+}
+.bargain {
+    margin-top: 5px;
+}
+
+.recom {
+    height: 163px;
+    background-color: #ebebeb;
+    margin-top: 11px;
+}
+.recom_hd {
+    float: left;
+    width: 205px;
+    height: 163px;
+    background-color: #5c5251;
+}
+.recom_hd img {
+    margin-top: 32px;
+    margin-left: 60px;
+}
+
+.recom_bd {
+    float: left;
+    height: 163px;
+}
+.recom_bd ul {
+    width: 990px;
+}
+.recom_bd ul li {
+    float: left;
+}
+.recom_txt{
+    float: left;
+    padding-top: 22px;
+    margin-left: 22px;
+}
+.recom_txt h4 {
+    font-size: 16px;
+}
+.color_txt1 {
+    display: inline-block;
+    width: 65px;
+    height: 18px;
+    background-color: #0085fb;
+    font-size: 14px;
+    color: #fff;
+}
+.color_txt2 {
+    display: inline-block;
+    width: 58px;
+    height: 18px;
+    background-color: #0085fb;
+    border-radius: 9px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+.recom_img{
+    float: left;
+    margin-top: 20px;
+    
+}
+.recom_bd ul li:nth-child(even) {
+    float: left;
+    width: 2px;
+    height: 142px;
+    background-color: #e4e4e4;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.recom_bd ul li:last-child {
+    width: 0;
+}
+.box_hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+}
+.box_hd h3 {
+    float: left;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #c81623;
+}
+.tab_list {
+    float: right;
+    line-height: 30px;
+}
+.tab_list ul li {
+    float: left;
+}
+.tab_list ul li a {
+    margin: 0 15px;
+}
+.floor .w {
+    margin-top: 30px;
+}
+.box_bd {
+    height: 361px;
+    /* background-color: pink; */
+}
+.tab_list_item>div {
+    float: left;
+    height: 361px;
+}
+.col_210 {
+    width: 210px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.col_210 ul {
+    padding-left: 14px;
+}
+.col_210 ul li {
+    float: left;
+    width: 85px;
+    height: 34px;
+    border-bottom: 2px solid #ededed;
+    line-height: 33px;
+    text-align: center;
+    margin-right: 10px;
+}
+.col_210 a img {
+    margin-top: 12px;
+}
+.col_329 {
+    width: 329px;
+}
+.col_221 {
+    width: 221px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+.col_221 a img {
+    margin-top: 22px;
+}
+.mt_50 a img{
+    margin-top: 50px;
+}
+.col_219 {
+    width: 219px;
+    text-align: center;
+}
+.col_219 a img {
+    margin-top: 22px;
+}
+.bb {
+    display: block;
+    border-bottom: 1px solid #ccc;
+}

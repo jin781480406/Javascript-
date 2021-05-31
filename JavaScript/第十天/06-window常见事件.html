@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- window.onload是可以放在任意地方不需要放在标签的后面 -->
+    <script>
+        // 传统写法 会被最后一个注册事件覆盖
+        /* window.onload=function(){
+            var btn=window.document.querySelector('button');
+            btn.addEventListener('click',function(){
+                alert('你好');
+            })
+        }
+        window.onload=function(){
+            alert(1231);
+        } */
+        // 普通写法 不会覆盖
+        window.addEventListener('load',function(){
+            var btn=window.document.querySelector('button');
+            btn.addEventListener('click',function(){
+                alert('你好');
+            })
+        })
+        window.addEventListener('load',function(){
+            alert(1231);
+        })
+         
+        // DOMContentLoaded等到DOM加载完毕即可 不需要全部的图片CSS等
+        // 是第一个执行的 加载的快一点
+        window.addEventListener('DOMContentLoaded',function(){
+            alert('第一个执行的');
+        })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+</body>
+</html>

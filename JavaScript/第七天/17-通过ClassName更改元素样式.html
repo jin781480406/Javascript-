@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            font-size: 12px;
+        }
+
+        .change {
+            width: 500px;
+            height: 500px;
+            background-color: springgreen;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">文本文字</div>
+    <script>
+        var div=document.querySelector('div');
+        div.onclick=function(){
+            // 把当前元素的类名改为了.change
+            // 通过修改类名，多个样式的改变更加方便
+            // 当然可以保留之前的类名,运用多类名的方法
+            // this.className='change'
+            this.className='first change';
+        }
+    </script>
+</body>
+</html>

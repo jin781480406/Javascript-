@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(){
+            console.log(arguments);
+            console.log(arguments.length);
+            console.log(arguments[3]);
+            for(var i=0;i<arguments.length;i++){
+                console.log(arguments[i]);
+            } 
+        }
+        fun(1,2,3);
+        fun(1,2,34,55,77)
+        // 伪数组
+        // 1.有数组的长度length
+        // 2.按照索引的长度进行存储
+        // 3.没有数组的方法，如pop，push
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

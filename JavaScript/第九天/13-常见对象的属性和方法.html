@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <ul>
+        <li>123</li>
+        <li>12</li>
+        <li>45</li>
+    </ul>
+    <script>
+        var div=document.querySelector('div');
+        div.onclick=function(event){
+            console.log(this);
+            console.log(event.target);
+        }
+
+        var ul=document.querySelector('ul');
+        ul.addEventListener('click',function(e){
+            // 给ul绑定事件 this 指向 ul
+            console.log(this);
+            // e.target 指向 点击的ul里li
+            // 兼容性
+            // e=e||window.target;
+            // var target=e||e.srcElement;
+            console.log(e.target);
+        })
+    </script>
+</body>
+</html>

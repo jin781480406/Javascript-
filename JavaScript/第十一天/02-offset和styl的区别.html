@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 200px;"></div>
+    <script>
+        var div=document.querySelector('div');
+        console.log(div.offsetWidth);
+        // div.style.width只适合于内嵌式
+        console.log(div.style.width);
+        // offsetWidth没有效果
+        // div.offsetWidth='300px';
+        div.style.width='300px';
+
+        // offset适合获取值  style适合改变值
+    </script>
+</body>
+</html>

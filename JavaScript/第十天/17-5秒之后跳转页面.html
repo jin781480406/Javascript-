@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div></div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.addEventListener('click', function () {
+            location.href = 'http://wwww.baidu.com';
+        })
+        var timer = 5;
+        // 解决空白问题 先执行一次函数
+        countTimer();
+        setInterval(countTimer,1000);
+        function countTimer() {
+            if (timer === 0) {
+                location.href = 'http://wwww.baidu.com';
+            } else {
+                div.innerHTML = '在' + timer + '秒后跳转到百度';
+                timer--;
+            }
+        }
+    </script>
+</body>
+
+</html>

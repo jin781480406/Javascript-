@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.setTimeout
+        // window.setTimeout() window可以省去
+        // setTimeout(function(){},毫秒)
+        // 毫秒可以省略 默认是0 立即执行
+        /* setTimeout(function(){
+            console.log('爆炸了');
+        },5000) */
+
+        // 第二种写法
+        function callback(){
+            console.log('爆炸了');
+        }
+        // setTimeout(函数名,毫秒)
+        var timer1=setTimeout(callback,2000);
+        var timer2=setTimeout(callback,6000);
+        // 第三种写法
+        // 不推荐这种写法
+        // setTimeout('callback',3000);
+    </script>
+</body>
+</html>

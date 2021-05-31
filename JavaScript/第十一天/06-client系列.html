@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: greenyellow;
+            border-top: 10px solid;
+            border-left: 50px solid;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // client系列
+        var div=document.querySelector('div');
+        // clientWidth和offsetWidth的区别就是
+        // clientWidth不计算border边框 但也计算padding
+        console.log(div.clientWidth);
+        // clientTop计算上边框的值
+        // clientLeft计算左边的值
+        console.log(div.clientTop);
+        console.log(div.clientLeft);
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: slategrey;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn200">点击你好移动200</button>
+    <button class="btn500">点击你好移动500</button>
+    <span>你好</span>
+    <script>
+        // 动画函数的封装
+        // animate(obj,target)
+        // obj指目标对象  target指目标位置
+        // 给不同元素指定不同的定时器
+        // 第三个形参是回调函数
+        function animate(obj, target, callback) {
+            // 排他思想，触发函数时清除定时器
+            clearInterval(obj.timer);
+            // 利用定时器的效果 一步步的实现效果
+            obj.timer = setInterval(function () {
+                // 缓动动画效果原理：(目标值-当前位置)/10
+                // 小数向上取整
+                var step = (target - obj.offsetLeft) / 10;
+                // 如果是正数向上取，如果是负数向下取
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    // 停止动画 本质上是停止定时器
+                    clearInterval(obj.timer);
+                    // 当清除定时器后 执行回调函数
+                    // 如果有回调函数就执行
+                    if (callback) {
+                        callback();
+                    }
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 15)
+        }
+        var span = document.querySelector('span');
+        var btn200 = document.querySelector('.btn200');
+        var btn500 = document.querySelector('.btn500');
+        btn200.addEventListener('click', function () {
+            animate(span, 200);
+        })
+        btn500.addEventListener('click', function () {
+            animate(span, 500, function () {
+                // alert('到点了');
+                span.style.backgroundColor = 'skyblue'
+            });
+        })
+    </script>
+
+</body>
+
+</html>

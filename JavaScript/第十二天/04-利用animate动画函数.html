@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: springgreen;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .con {
+            position: absolute;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 50px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 50px;
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span>→</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        // 获取元素
+        var sliderbar = document.querySelector('.sliderbar')
+        var span = document.querySelector('span');
+        var con = document.querySelector('.con');
+        // 鼠标经过箭头 弹出侧边栏
+        sliderbar.addEventListener('mouseenter', function () {
+            // animate(obj,target,callback);
+            // 当动画完后执行
+            animate(con, 0, function () {
+                span.innerHTML = '←';
+            });
+            // con.style.backgroundColor='springgreen';
+        })
+        // 鼠标移出箭头 隐藏侧边栏
+        sliderbar.addEventListener('mouseleave', function () {
+            animate(con, -200, function () {
+                span.innerHTML = '→';
+            });
+        })
+    </script>
+</body>
+
+</html>

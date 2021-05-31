@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // new关键字执行过程
+        // new构造函数可以再内存中创建一个空间
+        // this就会指向这个新的创建的对象
+        // 然后构造函数的代码给这个空对象添加属性和方法
+        // 返回这个对象
+        function Star(uname,age,sex){
+            this.name=uname;
+            this.age=age;
+            this.sex=sex;
+            this.sing=function(song){
+                console.log(song);
+            }
+        }
+        var ldh=new Star('刘德华',18,'男');
+        console.log(ldh);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

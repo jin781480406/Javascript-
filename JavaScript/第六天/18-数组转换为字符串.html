@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1数组转换为字符串
+        // 1.toString()将我们的数组转换为字符串
+        var arr=[1,2,3];
+        console.log(arr.toString);// 1,2,3
+        // 2.join(分隔符)
+        var arr1=[1,2,3];
+        console.log(arr.join());// 1,2,3
+        console.log(arr.join('-'));// 1-2-3
+        console.log(arr.join('&'));//1&2&3
+        // 3.concat()连接数组
+        console.log(arr.concat(arr1));// 1,2,3,1,2,3
+        // 4.slice(begin,end)截取数组
+        var arr2=[13,2424,3434,33434343,43434,323,3234,3434]
+        console.log(arr2.slice(1,4));
+        // 5.splice(第几个开始，要删除的个数)删除数组,返回的是删除的数组，这个会影响原数组
+        console.log(arr2.splice(1,2));
+        console.log(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

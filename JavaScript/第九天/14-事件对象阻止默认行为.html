@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>132</div>
+    <a href="www.baidu.com">百度</a>
+    <form action="www.baidu.con">
+        <input type="submit" value="提交" name="sub">
+    </form>
+    <script>
+        var div=document.querySelector('div');
+        // 返回事件对象
+        div.addEventListener('click',fn);
+        div.addEventListener('mouseover',fn);
+        div.addEventListener('mouseout',fn);
+        function fn(e){
+            console.log(e.type);
+        }
+
+        // 阻止默认行为 让链接不跳转 按钮不提交
+        var a=document.querySelector('a');
+        /* a.addEventListener('click',function(e){
+            // 不让链接跳转
+            // dom标准写法
+            e.preventDefault();
+        }) */
+
+        a.onclick=function(e){
+            // 普通浏览器
+            // e.preventDefault();
+            // 低版本浏览器
+            // e.returnValue;
+            // 可以利用 return false
+            // 但有一个缺点 return false后的语句不执行
+            return false;
+        }
+    </script>
+</body>
+</html>

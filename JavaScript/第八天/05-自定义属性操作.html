@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" index='1' class="nav"></div>
+    <script>
+        var div=document.querySelector('div');
+        // 获取元素属性
+        // 1.Element.属性
+        console.log(div.id);
+        // 2.Element.getAttribute('属性') 两者的区别是第二种方法可以获取自定义属性 如index  自定义属性就是程序员自己添加的属性
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('index'));
+
+        // 设置元素属性
+        // 1.Element.属性='值'
+        div.id='demo';
+        // div.index='2'; 这个不行，因为是自定义属性
+        div.className='navs';
+        // 2.Element.setAttribute('属性','值')
+        div.setAttribute('id','demo2');
+        div.setAttribute('index',2);
+        div.setAttribute('class','footer');
+
+        // 移除元素属性
+        // element.removeAttribute('属性')
+        div.removeAttribute('class');
+    </script>
+</body>
+</html>

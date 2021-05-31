@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date总的毫秒数,不是当前的时间而是距离1970年1月1日的总毫秒数
+        // 1.通过valueof 和 getTime
+        var date =new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        // 2.简单写法
+        var date1=+new Date();
+        console.log(date1);
+        // 3.H5新增方法
+        console.log(Date.now());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

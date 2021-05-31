@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <span>abc</span>
+    <script>
+        var div=document.querySelector('div');
+        // 1.nextSibling 下一个节点 包括元素节点和文本节点
+        console.log(div.nextSibling);
+        // 2.previousSibling 上一个节点 包括元素节点和文本节点
+        console.log(div.previousSibling);
+        // 3.nextElementSibling 下一个元素节点
+        // 下一个元素节点仍然是换行
+        console.log(div.nextElementSibling);
+        // 4.previousElementSibling 下一个元素节点
+        console.log(div.previousElementSibling);
+        // 以上都有兼容性问题
+
+        // 可以自己封装一个函数
+    </script>
+</body>
+</html>

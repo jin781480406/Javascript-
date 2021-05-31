@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time">某个时间</div>
+    <div id="wh">某个问候</div>
+    <img src="images/swh.jpg" alt="" title="早上好">
+    <script>
+        var date = new Date();
+        var h = date.getHours();
+        var time = document.getElementById('time');
+        var wh = document.getElementById('wh');
+        var img = document.querySelector('img');
+        if (h <= 12) {
+            wh.innerText = '早上好';
+            img.src = 'images/swh.jpg';
+            img.title = '早上好';
+        } else if (h <= 18) {
+            wh.innerText = '中午好';
+            img.src = 'images/zwh.jpg';
+            img.title = '中午好';
+        } else {
+            wh.innerText = '晚上好';
+            img.src = 'images/wsh.jpg';
+            img.title = '晚上好';
+        }
+        time.innerText = h;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            margin: 100px auto;
+        }
+
+        span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="mins">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        // 获取每个框框的元素
+        var hour = document.querySelector('.hour');
+        var mins = document.querySelector('.mins');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2021-5-24 22:0:0');
+        // 先调用一次防止第一次刷新的时候有空白
+        getNowTime();
+        // 设定定时器，1s 执行赋值的函数
+        setInterval(getNowTime, 1000);
+        function getNowTime() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            // 赋值
+            hour.innerHTML = h;
+            mins.innerHTML = m;
+            second.innerHTML = s;
+        }  
+    </script>
+</body>
+
+</html>

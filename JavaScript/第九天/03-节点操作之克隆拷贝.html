@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1231</li>
+        <li>13132</li>
+        <li>132213213123</li>
+    </ul>
+    <script>
+        var ul=document.querySelector('ul');
+        // 1.克隆节点
+        // Node.children[0].cloneNode() 括号里面没有或者false 只能复制标签不复制内容
+        // Node.children[0].cloneNode() 括号里面true 复制标签也能复制内容
+        var lili=ul.children[0].cloneNode(true);
+        // 2.添加节点
+        ul.appendChild(lili);
+    </script>
+</body>
+</html>

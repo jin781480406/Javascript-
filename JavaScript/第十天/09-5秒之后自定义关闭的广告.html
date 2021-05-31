@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img ad="images/ad.jpg" alt="" class="ad">
+    <!-- 我自己加的 -->
+    <button disabled='disabled'>关闭广告</button>
+    <script>
+        var img=document.querySelector('.ad');
+        var btn=document.querySelector('button');
+        window.setTimeout(function(){
+            img.style.display='none';
+            // 我自己加的
+            /* btn.removeAttribute('disabled');
+            btn.onclick=function(){
+                ad.style.display='none';
+            } */
+        },5000)
+    </script>
+</body>
+</html>

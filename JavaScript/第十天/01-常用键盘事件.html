@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.某个键盘按键松开时触发
+        document.addEventListener('keyup',function(){
+            console.log('我松开了');
+        })
+        // 2.某个键盘按下时触发
+        document.addEventListener('keydown',function(){
+            console.log('按下了');
+        })
+        // 3.某个键盘按下时触发，除了功能键，cirl，shift和方向键
+        document.addEventListener('keypress',function(){
+            console.log('按下了');
+        })
+        // 三个事件的顺讯是keydown---keyprss---keyup
+    </script>
+</body>
+</html>

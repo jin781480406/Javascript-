@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.replace()替换字符 只会替换第一个字符
+        var str='改革春春风';
+        var str1=str.replace('春','金');
+        console.log(str1);
+        // 有一个字符串，把a替换成b
+        var str2='asdaasdsdaas';
+        while(str2.indexOf('a')!==-1){
+            str2=str2.replace('a','b');
+        }
+        console.log(str2);
+        // 2.split(分隔符)字符串转换为数组
+        var str3='red,pink,blue,yellow';
+        console.log(str3.split(','));
+        var str4='red&pink&blue&yellow';
+        console.log(str4.split('&'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

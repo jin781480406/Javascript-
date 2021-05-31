@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            border: 10px solid red;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>你试试撒第三大点 你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点你试试撒第三大点</div>
+    <script>
+        var div=document.querySelector('div');
+        // scrollHeight也不计算border的值
+        console.log(div.scrollHeight);
+        console.log(div.clientHeight);
+        // scrollHeight和clientHeight的区别
+        // scrollHeight计算的是盒子内的内容的高度
+        // clientHeight计算的是盒子大小
+        div.addEventListener('scroll',function(){
+            // scrollTop的值是当滚轮到最下面 内容的最上面到盒子最上面的距离
+            console.log(div.scrollTop);
+        })
+
+    </script>
+</body>
+</html>

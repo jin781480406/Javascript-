@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>attachEvent()</button>
+    <script>
+        var btns=document.querySelectorAll('button');
+        // 1.传统方法
+        btns[0].onclick=function(){
+            alert('1');
+        }
+        btns[0].onclick=function(){
+            alert('2');
+        }
+        // 只会执行最后一个注册事件
+
+        // 2.事件监听注册事件
+        // .addEventListener() 第一个参数是type 不带on
+        // 第二个参数是函数
+        // 同一个元素可以绑定多个注册事件
+        btns[1].addEventListener('click',function(){
+            alert(22);
+        })
+        btns[1].addEventListener('click',function(){
+            alert(131321);
+        })
+
+        // 3.attachEvent()
+        // ie9之前
+        btns[2].attachEvent('onclick',function(){
+            alert(132123123123)
+        })
+    </script>
+</body>
+</html>

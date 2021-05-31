@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            /* border: 1px solid #000; */
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr,
+        td {
+            width: 500px;
+            height: 30px;
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>科目</td>
+                <td>成绩</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        // 先准备学生数据
+        // 以数组的形式存储一组数据
+        var students = [{
+            name: '张三',
+            subject: 'java',
+            score: 100,
+        },
+        {
+            name: '李四',
+            subject: 'java',
+            score: 45,
+        },
+        {
+            name: '王五',
+            subject: 'java',
+            score: 52,
+        },
+        {
+            name: '金孝文',
+            subject: 'java',
+            score: 68,
+        }]
+
+        // 有多少数据创建多少行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < students.length; i++) {// 外面的for循环是管行的
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 创建一行内的单元格数，根据对象属性的个数 for循环遍历对象 students[i]
+            // 这里的三个单元格式数据(三个)
+            for (var k in students[i]) {// 里面的for循环是管列的
+                var td = document.createElement('td');
+                // 把对象的值赋值给td
+                // k是属性名，students[i][k]是属性名对应的属性值
+                td.innerHTML = students[i][k];
+                tr.appendChild(td);
+            }
+            // 添加操作的单元格
+            var oper = document.createElement('td');
+            // 我自己的写的方法 给每个删除按钮添加一个index自定义属性
+            oper.innerHTML = '<a href="javascript:;" index="'+i+'"">删除</a>';
+            // var index = oper.getAttribute('index');
+            tr.appendChild(oper);
+        }
+
+        // 删除操作
+        var as = document.querySelectorAll('a');
+        // 给每个删除按钮添加点击事件
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                // tbody.removeChild()
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

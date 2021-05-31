@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用我们布尔值参与的逻辑运算 true&&false == false
+        // 132&456是值 或者是 表达式 参与逻辑运算
+        // 逻辑与短路运算 如果表达式1 结果为真 则返回表达式2 如果表达式1位假 则返回表达式1
+        console.log(123&&456);// 456
+        console.log(0&&456);// 0
+        console.log(0&&456+67&&45*2);// 0
+        console.log(''&&454);// 
+        // 如果有空的或者否定的为假 其余是真的 0 '' null undefined NaN
+        // 逻辑或短路运算 如果表达式1 结果为真 则返回表达式1 如果表达式1为假 则返回表达式2
+        console.log(123||456);// 123
+        console.log(0||456);// 456
+        console.log(0||0||123);// 123
+        console.log(''||456);// 456
+        var num =1;
+        console.log(123||num++);
+        console.log(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

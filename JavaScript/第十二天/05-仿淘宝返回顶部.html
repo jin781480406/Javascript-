@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 页面被卷到头部是window.pageYoffset属性得到
+        // 元素的内容被卷到顶部是scrollTop
+        // 获取元素
+        var sliderbar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var goBack = document.querySelector('.goBack');
+        var header = document.querySelector('.header');
+        var main = document.querySelector('.main');
+        // bannerTop就是卷去头部的高度
+        var bannerTop = banner.offsetTop;
+        // sliderbarTop就是侧边栏的距离banner的高度
+        var sliderbarTop = sliderbar.offsetTop - banner.offsetTop;
+        // mainTop就是卷去banner的高度
+        var mainTop = main.offsetTop;
+        // console.log(bannerTop);
+        // 页面滚动事件
+        document.addEventListener('scroll', function () {
+            // 当卷过头部时
+            if (window.pageYOffset >= bannerTop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px';
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '300px';
+            }
+            // 当卷过banner时
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        })
+
+        // 点击返回顶部 返回页面顶部事件 
+        goBack.addEventListener('click', function () {
+            // x和y不跟单位
+            // window.scroll(0, 0);
+            animate(window,0);
+        })
+
+        // 动画函数
+        // 把left改成window.pageYOffset
+        function animate(obj, target, callback) {
+            // 排他思想，触发函数时清除定时器
+            clearInterval(obj.timer);
+            // 利用定时器的效果 一步步的实现效果
+            obj.timer = setInterval(function () {
+                // 缓动动画效果原理：(目标值-当前位置)/10
+                // 小数向上取整
+                var step = (target - window.pageYOffset) / 10;
+                // 如果是正数向上取，如果是负数向下取
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (window.pageYOffset == target) {
+                    // 停止动画 本质上是停止定时器
+                    clearInterval(obj.timer);
+                    // 当清除定时器后 执行回调函数
+                    // 如果有回调函数就执行
+                    if (callback) {
+                        callback();
+                    }
+                } else {
+                    // obj.style.left = obj.offsetLeft + step + 'px';
+                    window.scroll(0,window.pageYOffset + step );
+                }
+            }, 15)
+        }
+    </script>
+</body>
+
+</html>

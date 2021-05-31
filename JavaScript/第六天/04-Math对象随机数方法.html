@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Math.random()是0~1之间的随机数
+        console.log(Math.random());
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+        }
+        console.log(getRandomInt(1,10));
+
+        //随机点名
+        var arr=['张三','李四','王五','金六'];
+        console.log(arr[getRandomInt(0,arr.length-1)]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
